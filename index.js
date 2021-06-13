@@ -19,13 +19,27 @@ const PORT = process.env.PORT || 80;
 import authRoute from "./routes/oAuth/auth.js";
 import clientRoute from "./routes/client/registerClient.js";
 
+var allowedOrigins = [`https://localhost:${PORT}`, "https://sm-backend-server.herokuapp.com/", "https://apple-host-tree.herokuapp.com/"];
+
 // Connect DB
 const db_url = `mongodb+srv://${process.env.DB_USER}:${process.env.DB_PASSWORD}@auth-cluster.gnkyo.mongodb.net/${process.env.DB_NAME}?retryWrites=true&w=majority`;
 mongodb.connect(db_url, { useNewUrlParser: true, useUnifiedTopology: true }, () => console.log("DB Connection Healthy...!!! "));
 
 // Middleware
 app.use(json());
-app.use(cors());
+app.use(
+    cors({
+        origin: function (origin, callback) {
+            if (!origin) return callback(null, true);
+
+            if (allowedOrigins.indexOf(origin) === -1) {
+                var msg = "The CORS policy for this site does not " + "allow access from the specified Origin.";
+                return callback(new Error(msg), false);
+            }
+            return callback(null, true);
+        },
+    })
+);
 app.use(helmet());
 
 swaggerDoc(app);
