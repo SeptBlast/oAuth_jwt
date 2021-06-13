@@ -1,5 +1,5 @@
 {
-    "name": "startupmanch-backend-server",
+    "name": "personalized-server",
     "version": "1.0.0",
     "description": "JSON web token authentication using Node ",
     "main": "index.js",
@@ -13,11 +13,9 @@
     "license": "ISC",
     "dependencies": {
         "@hapi/joi": "^17.1.1",
-        "admin-bro": "^4.0.1",
-        "admin-bro-expressjs": "^2.1.1",
-        "admin-bro-mongoose": "^0.5.2",
         "axios": "^0.21.1",
         "bcryptjs": "^2.4.3",
+        "cheerio": "^0.22.0",
         "cors": "^2.8.5",
         "dotenv": "^10.0.0",
         "express": "^4.17.1",
@@ -33,7 +31,7 @@
         "nodemon": "^2.0.7"
     },
     "engines": {
-        "node": ">=14.13.0",
+        "node": ">=12.22.0",
         "npm": ">=6.14.8"
     },
     "repository": "https://github.com/SeptBlast/oAuth_jwt"

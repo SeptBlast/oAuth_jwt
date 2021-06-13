@@ -7,6 +7,7 @@ import { config } from "dotenv";
 import postRoute from "./routes/post/posts.js";
 import homeRoute from "./routes/home.js";
 import githubRoute from "./routes/githubjobs.js";
+import webScrapRoute from "./routes/similarweb/index.js";
 // import userInterfaceRoute from "./UserInterface/index.js";
 // import testRoute from "./routes/demo/test.js";
 import swaggerDoc from "./config/swaggerDoc.js";
@@ -36,6 +37,7 @@ app.use("/api/user", authRoute);
 app.use("/api/posts", postRoute);
 app.use("/api/register", clientRoute);
 app.use("/api/githubJobs", githubRoute);
+app.use("/api/webScrapedData", webScrapRoute);
 // app.use("/api/test", testRoute);
 
 app.listen(PORT, () => console.log("Server Up at localhost:" + PORT));
