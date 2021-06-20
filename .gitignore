@@ -62,7 +62,6 @@ npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
 
-
 # Dependency directories
 node_modules/
 jspm_packages/
@@ -94,3 +93,4 @@ lerna-debug.log
 # System Files
 .DS_Store
 Thumbs.db
+package-lock.json

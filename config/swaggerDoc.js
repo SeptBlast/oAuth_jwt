@@ -28,7 +28,7 @@ const swaggerOptions = {
             },
         },
     },
-    apis: ["./index.js", "./routes/*.js", "./routes/oAuth/*.js", "./routes/similarweb/*.js"],
+    apis: ["./index.js", "./routes/*.js", "./routes/oAuth/*.js", "./routes/similarweb/*.js", "./routes/pageSpeedInsight/*.js"],
 };
 
 const swaggerDocs = swaggerJsdoc(swaggerOptions);
